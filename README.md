@@ -19,6 +19,23 @@ Admin: manage user, manage mod, config website, manage News.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Skill: PHP, Yii framework, HTML, Bootstrap, CSS, JS, Jquery, Mysql.
 
 Respone: design, dev, build, delop, mantain, support.
