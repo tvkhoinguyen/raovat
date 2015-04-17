@@ -1,0 +1,42 @@
+.ad-square {
+  /*border: 1px solid #e2e8ec;*/
+  /*padding: 15px;*/
+  height: 190px;
+  /*margin-bottom: 20px;*/
+}
+
+.ad-square h3 {
+  /*text-align: left;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  margin-top: 5px;
+}
+
+.ad_detail {
+   height: auto; 
+  /*padding: 20px;*/
+  /*border: 1px solid #e0e0e0;*/
+  /*postion: relative;*/
+  /*background: #065C7B;*/
+}
+.phone{
+	  margin-top: 20px;
+  /*width: 85%;*/
+  /*height: 95px;*/
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  border-top: 1px solid #e0e0e0;
+}
+
+.ad_detail_contact {
+  /*margin-top: 20px;*/
+  /*width: 85%;*/
+  /*height: 95px;*/
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  border-top: none;
+}
+
+.detail_wrapper_chitiet{
+	border-bottom: 1px solid #e0e0e0;
+}

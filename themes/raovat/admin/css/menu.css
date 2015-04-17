@@ -1,0 +1,157 @@
+
+ul.dropdown {
+ font-weight: bold;
+}
+
+	ul.dropdown li {
+	 padding: 7px 10px;
+	 border-style: solid;
+	 border-width: 1px 1px 1px 0;
+	 border-color: #fff #d9d9d9 #d9d9d9;
+	 background-color: #E0E0E0;
+	 color: #000;
+	}
+
+	ul.dropdown li.hover,
+	ul.dropdown li:hover {
+	 background-color: #eee;
+	 color: #000;
+	}
+
+	ul.dropdown a:link,
+	ul.dropdown a:visited	{ color: #000; text-decoration: none; }
+	ul.dropdown a:hover		{ color: #000; }
+	ul.dropdown a:active	{ color: #ffa500; }
+
+
+	/* -- level mark -- */
+
+	ul.dropdown ul {
+	 width: 150px;
+	 margin-top: 1px;
+	}
+
+		ul.dropdown ul li {
+		 font-weight: normal;
+		}
+
+
+
+/*-------------------------------------------------/
+ * @section		Support Class `dir`
+ * @level sep	ul, .class
+ */
+
+ul.dropdown *.dir {
+ padding-right: 20px;
+ background-image: url(images/nav-arrow-down.html);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+
+/* -- Components override -- */
+
+ul.dropdown-horizontal ul *.dir {
+ padding-right: 15px;
+ background-image: url(images/nav-arrow-right.html);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+ul.dropdown-upward *.dir {
+ background-image: url(images/nav-arrow-top.html);
+}
+
+ul.dropdown-vertical *.dir,
+ul.dropdown-upward ul *.dir {
+ background-image: url(images/nav-arrow-right.html);
+}
+
+ul.dropdown-vertical-rtl *.dir {
+ padding-right: 10px;
+ padding-left: 15px;
+ background-image: url(images/nav-arrow-left.html);
+ background-position: 0 50%;
+}
+
+#tabs_wrap {
+    background: url("../images/tabs_border.png") repeat-x scroll left bottom transparent;
+    height: 31px;
+    overflow: hidden;
+    padding: 0 20px;
+    z-index: 0;
+}
+ul.tabs {
+    height: 31px;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+#tabs_wrap ul li {
+    float: left;
+    height: 28px;
+    line-height: 18px;
+    list-style: none outside none;
+    margin-bottom: 5px;
+    z-index: 0;
+}
+#tabs_wrap ul li a {
+    background: url("../images/left_tab.png") no-repeat scroll left top transparent;
+    display: block;
+    height: 28px;
+    padding-left: 28px;
+    text-decoration: none;
+    z-index: 0;
+}
+#tabs_wrap ul li a span {
+    background: url("../images/right_tab.png") no-repeat scroll right top transparent;
+    color: #FFFFFF;
+    display: block;
+    font-weight: bold;
+    height: 23px;
+    min-width: 100px;
+    padding-right: 28px;
+    padding-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+#tabs_wrap ul li.current a {
+    background: url("../images/left_tab_curr.png") no-repeat scroll left top transparent;
+}
+#tabs_wrap ul li.current a span {
+    background: url("../images/right_tab_curr.png") no-repeat scroll right top transparent;
+    text-decoration: underline;
+}
+#tabs_wrap ul li:hover a {
+    background-position: 0 -28px;
+}
+#tabs_wrap ul li:hover a span {
+    background-position: right -28px;
+}
+#tabs_wrap ul li.current:hover a {
+    background-position: left top;
+}
+#tabs_wrap ul li.current:hover a span {
+    background-position: right top;
+}
+#tabs_wrap a.left_arrow {
+    background: url("../images/left_arrow_tab.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 26px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 28px;
+    z-index: 1;
+}
+#tabs_wrap a.right_arrow {
+    background: url("../images/right_arrow_tab.png") repeat scroll 0 0 transparent;
+    display: block;
+    height: 26px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 28px;
+    z-index: 1;
+}

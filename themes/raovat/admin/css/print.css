@@ -1,0 +1,143 @@
+body
+{
+    font-size:12px;
+    color:#000;
+    background-color:#fff;
+    padding:0;
+    margin:0;
+    text-align:center;
+    font-family:Arial;
+}
+#main
+{
+    text-align:left;
+}
+#menu
+{
+    display:none;
+}
+.label_title
+{
+    display:none;
+}
+.group_button
+{
+    display:none;
+}
+#top-nav
+{
+    display:none;
+}
+.header_left
+{
+    display:none;
+}
+.grid_view
+{
+    padding:5px 0;
+}
+.grid_view table
+{
+    border: solid 1px #C0c0c0;
+}
+.grid_view .head
+{
+    color:#fff;
+    background-color:#045979;
+}
+.grid_view .head a
+{
+    color:#fff;
+}
+.grid_view .item
+{
+    background-color:#e1e1e1;
+}
+.grid_view .item_alter
+{
+    background-color:#f7f7f7;
+}
+.grid_view .item_alter2
+{
+    background-color:#fff;
+}
+.grid_view .summary
+{
+    font-weight:bold;
+    background-color:#ccddee;
+}
+.grid_view .action
+{
+    text-align:center;
+    white-space:nowrap;
+}
+.grid_view .item a, .grid_view .item_alter a
+{
+    color:#0000ee;
+}
+.proposal_details
+{
+    width:100%;
+}
+.proposal_details .company b
+{
+    font-size:120%;
+}
+.proposal_details .information
+{
+    font-size:120%;
+}
+.proposal_details .company
+{
+    line-height:150%;
+    padding:10px 0 30px;
+}
+.proposal_details .text
+{
+    padding:10px 0;
+    line-height:135%;    
+}
+.form_add_edit
+{
+    padding:5px 0;
+}
+.form_add_edit table
+{
+    
+}
+.form_add_edit .header_title
+{
+    font-weight:bold;
+    border-bottom:1px solid #777;
+    padding:10px 0 3px;
+    margin-bottom:5px;
+    color:#000;
+    font-size:110%;
+}
+.form_add_edit table td.form_left
+{
+    width:140px;
+    white-space:nowrap;
+    background-color:#eee;
+    padding:0 5px;
+    font-weight:bold;
+}
+.form_add_edit table td.form_left2
+{
+    white-space:nowrap;
+    background-color:#eee;
+    padding:0 5px;
+    font-weight:bold;
+}
+.form_add_edit table td.form_right
+{
+    width:25%;
+}
+.form_add_edit table td.form_right span.label
+{
+    padding:0 5px 0 10px;
+}
+.form_add_edit table td.form_right .textbox
+{
+    width:60%;
+}

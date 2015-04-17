@@ -1,0 +1,152 @@
+/*Nguyen hover Active/Inactive */
+a.ajaxupdate:hover{
+    color: red !important;
+}
+
+.attribute_demo_video{
+    padding-bottom: 10px;
+}
+.attribute_demo_video .panel-heading{
+    background-color: #b1b1b1;
+    border-color: #b1b1b1;
+    color: #333333;
+    margin-bottom: 7px;
+}
+.attribute .panel-heading{
+    background-color: #b1b1b1;
+    border-color: #b1b1b1;
+    color: #333333;
+    margin-bottom: 7px;
+}
+
+ul#image-data .thumbs{
+    list-style-type: none !important;
+    list-style: none !important;
+}
+ul#image-data .thumbs li{
+    list-style-type: none !important;
+    list-style: none !important;
+}
+
+
+span.thumbnail{
+    position: relative !important;
+}
+
+
+span.thumbnail button:hover{
+    background-position: 0px !important;
+    cursor: pointer !important;
+}
+
+span.thumbnail button{
+    position: absolute !important;
+    background: url(../images/delete-icon.png) no-repeat;
+    border: medium none;
+    height: 24px;
+    width: 24px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer !important;
+}
+span.thumbnail button:hover{
+    background: url(../images/delete-icon.png) no-repeat;
+    border: none;
+    /*background-image: none !important;*/
+    background-position: 0px !important;
+    cursor: pointer !important;
+}
+span.thumbnail input{
+    position: absolute !important;
+    border: medium none;
+    top: 100px;
+    left:5px;
+    cursor: pointer !important;
+}
+
+
+
+button.img-del2{
+    background: url(../images/delete-icon2.png) no-repeat;
+    border: medium none;
+    height: 15px;
+    width: 15px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer !important;
+}
+
+button.img-del2:hover{
+    background: url(../images/delete-icon2.png) no-repeat;
+    border: medium none;
+    height: 15px;
+    width: 15px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer !important;
+}
+
+ul#video-data-detail li{
+    background: none; 
+    width: 180px; 
+    height:150px; 
+    float: left; 
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+button.del_clip_video{
+    background: url(../images/delete-icon-40x40.png) no-repeat;
+    position: absolute;
+    border: medium none;
+    height: 40px;
+    width: 40px;
+    right: -6px;
+    top: 0px;
+    cursor: pointer !important;
+    z-index: 9999;
+}
+
+button.del_clip_video:hover{
+    background: url(../images/delete-icon-40x40.png) no-repeat;
+    position: absolute;
+    border: medium none;
+    height: 40px;
+    width: 40px;
+    right: -6px;
+    top: 0px;
+    cursor: pointer !important;
+    z-index: 9999;
+}
+
+/*Nguyen*/
+.table_time_slot{
+    /*padding: 10px !important;*/
+    /*border: 1px black !important;*/
+    background: #FFFFFF !important;
+    /*border: 1px solid black;*/
+    border: 1px solid #CCC;
+}
+.table_time_slot td{
+    padding: 5px !important;
+    border: 1px solid #CCC;
+}
+.first_tr_td{
+    background: #D8D8D8  !important;
+    border: 1px solid #CCC;
+    color: #333333 ;
+    font-weight: bold;
+    font-size: 14px;
+}
+.first_td{
+    border: 1px solid #CCC;
+    color: #3366CC;
+    font-weight: bold;
+    font-size: 14px;
+}
+/*End Nguyen*/

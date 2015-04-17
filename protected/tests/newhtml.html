@@ -1,0 +1,46 @@
+<div class="showbox">
+    <div id="inline" class="box">
+        <p class="title-box">Log a Service Call</p>
+        <p class="note">Fields marked with <span style="color: #ff0000">*</span> are required</p>
+        <p class="servicetitle">Make a Support Request</p>
+        <div class="infobox">Contact Information</div>
+        <div class="row">
+            <label>Title<span style="color: #ff0000">*</span>:</label>[select menu-483 "Ms" "Mrs" "Mr" "Mdm"]
+        </div>
+        <div class="row">
+            <label>Name <span style="color: #ff0000">*</span>:</label>[text* your-name class:text]
+        </div>
+         <div class="row">
+            <label>Phone <span style="color: #ff0000">*</span>:</label>[text* your-contact_number class:text]
+        </div>
+        <div class="row">
+            <label>Email <span style="color: #ff0000">*</span>:</label>[email* your-email class:text]
+        </div>
+        <div class="infobox">Organisation Information</div>
+        <div class="row">
+            <label>Product/Model<span style="color: #ff0000">*</span>:</label>[email* product-model class:text]
+        </div>
+        <div class="row">
+            <label>Serial Number <span style="color: #ff0000">*</span>:</label>[text* serial-number class:text]
+        </div>
+        <div class="row">
+            <label>Country/Territory <span style="color: #ff0000">*</span>:</label>[select* country include_blank "Afghanistan" " Albania" " Algeria" " American Samoa" " Andorra" " Angola" " Anguilla" " Antarctica" " Antigua and Barbuda" " Argentina" " Armenia" " Aruba" " Australia" " Austria" " Azerbaijan" " Bahamas" " Bahrain" " Bangladesh" " Barbados" " Belarus" " Belgium" " Belize" " Benin" " Bermuda" " Bhutan" " Bolivia" " Bosnia and Herzegowina" " Botswana" " Bouvet Island" " Brazil" " British Indian Ocean Territory" " Brunei Darussalam" " Bulgaria" " Burkina Faso" " Burundi" " Cambodia" " Cameroon" " Canada" " Canary Islands" " Cape Verde" " Cayman Islands" " Central African Republic" " Chad" " Chile" " China" " Christmas Island" " Cocos (Keeling) Islands" " Colombia" " Comoros" " Congo" " Cook Islands" " Costa Rica" " Cote D'Ivoire" " Croatia" " Cuba" " Cyprus" " Czech Republic" " Denmark" " Djibouti" " Dominica" " Dominican Republic" " East Timor" " East Timor" " Ecuador" " Egypt" " El Salvador" " Equatorial Guinea" " Eritrea" " Estonia" " Ethiopia" " Falkland Islands (Malvinas)" " Faroe Islands" " Fiji" " Finland" " France" " French Guiana" " French Polynesia" " French Southern Territories" " Gabon" " Gambia" " Georgia" " Germany" " Ghana" " Gibraltar" " Greece" " Greenland" " Grenada" " Guadeloupe" " Guam" " Guatemala" " Guinea" " Guinea-bissau" " Guyana" " Haiti" " Heard and Mc Donald Islands" " Honduras" " Hong Kong" " Hungary" " Iceland" " India" " Indonesia" " Iran (Islamic Republic of)" " Iraq" " Ireland" " Israel" " Italy" " Jamaica" " Japan" " Jersey" " Jordan" " Kazakhstan" " Kenya" " Kiribati" " Korea, Democratic People's Republic of" " Korea, Republic of" " Kuwait" " Kyrgyzstan" " Lao People's Democratic Republic" " Latvia" " Lebanon" " Lesotho" " Liberia" " Libyan Arab Jamahiriya" " Liechtenstein" " Lithuania" " Luxembourg" " Macau" " Macedonia, The Former Yugoslav Republic of" " Madagascar" " Malawi" " Malaysia" " Maldives" " Mali" " Malta" " Marshall Islands" " Martinique" " Mauritania" " Mauritius" " Mayotte" " Mexico" " Micronesia, Federated States of" " Moldova, Republic of" " Monaco" " Mongolia" " Montserrat" " Morocco" " Mozambique" " Myanmar" " Namibia" " Nauru" " Nepal" " Netherlands" " Netherlands Antilles" " New Caledonia" " New Zealand" " Nicaragua" " Niger" " Nigeria" " Niue" " Norfolk Island" " Northern Mariana Islands" " Norway" " Oman" " Pakistan" " Palau" " Palestinian Territory, occupied" " Panama" " Papua New Guinea" " Paraguay" " Peru" " Philippines" " Pitcairn" " Poland" " Portugal" " Puerto Rico" " Qatar" " Reunion" " Romania" " Russian Federation" " Rwanda" " Saint Kitts and Nevis" " Saint Lucia" " Saint Vincent and the Grenadines" " Samoa" " San Marino" " Sao Tome and Principe" " Saudi Arabia" " Senegal" " Serbia" " Seychelles" " Sierra Leone" " Singapore" " Sint Maarten (French Antilles)" " Sint Maarten (Netherlands Antilles)" " Slovakia" " Slovenia" " Solomon Islands" " Somalia" " South Africa" " South Georgia and the South Sandwich Islands" " Spain" " Sri Lanka" " St. Barthelemy" " St. Eustatius" " St. Helena" " St. Pierre and Miquelon" " Sudan" " Suriname" " Svalbard and Jan Mayen Islands" " Swaziland" " Sweden" " Switzerland" " Syrian Arab Republic" " Taiwan" " Tajikistan" " Tanzania, United Republic of" " Thailand" " The Democratic Republic of Congo" " Togo" " Tokelau" " Tonga" " Trinidad and Tobago" " Tunisia" " Turkey" " Turkmenistan" " Turks and Caicos Islands" " Tuvalu" " Uganda" " Ukraine" " United Arab Emirates" " United Kingdom" " United States" " United States Minor Outlying Islands" " Uruguay" " Uzbekistan" " Vanuatu" " Vatican City State (Holy See)" " Venezuela" " Viet Nam" " Virgin Islands (British)" " Virgin Islands (U.S.)" " Wallis and Futuna Islands" " Western Sahara" " Yemen" " Zambia" " Zimbabwe"]           
+        </div>
+        <div class="row">
+            <label>When contacting me, avoid lunch time <span style="color: #ff0000">*</span>:</label>[select* contact-time include_blank "12:00 - 13:00",  "12:30 - 13:30", "13:00 - 14:00", "13:30 - 14:30", "No need to avoid lunch time"]
+        </div>
+         <div class="infobox">Support request information</div>
+        <div class="row">
+            <label>Request type <span style="color: #ff0000">*</span>:</label>[select* requesttime include_blank "Hardware", "Software"]
+        </div>     
+        <div class="row">
+            <label>Description :</label>[textarea your-description 60x5]
+        </div>
+        <div class="row">
+            <label>Special instructions :</label>[text your-instruction class:text]
+        </div>
+        
+        <div class="button">[submit class:btn "Submit"]
+        </div>
+    </div>
+</div><!-- // showbox -->
