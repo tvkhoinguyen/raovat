@@ -21,8 +21,8 @@
                                 <p>Email: <span>aaqsolution@gmail.com</span></p>
                                 <p>Appointment Monday - Saturday 8 am to 7 pm.</p>
                                 <p>Follow on: 
-                                        <span><a href="https://www.facebook.com/promotionptaz"><img src="images/face_follow.png"></a></span>        
-                                        <span><a href="https://plus.google.com/109124683524310781773/"><img src="images/g+_follow.png"></a>
+                                        <span><a href="https://www.facebook.com/promotionptaz"><img src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/face_follow.png"></a></span>        
+                                        <span><a href="https://plus.google.com/109124683524310781773/"><img src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/g+_follow.png"></a>
                                                 </span>
                                 </p>
                            </div>
