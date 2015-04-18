@@ -1,3 +1,69 @@
+<div class="row">
+    <div id="t3-content" class="t3-content">
+        <div class="row">
+            <div class="content_right" style="margin: -40px 0 0 0 ">
+                <div class="contact">
+                    <div class="section group">             
+                        <div class="col span_1_of_3">
+                            <div class="contact_info">
+                                    <h3>Find Us Here</h3>
+                                    <div class="map">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.6210460624675!2d-112.218088!3d33.53723699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b6a8c508a5ab1%3A0x9ab1975df488d4a4!2sAAQ+Solution!5e0!3m2!1svi!2s!4v1425977921897" width="100%" height="200" frameborder="0" style="border:0"></iframe>
+                                    </div>
+                            </div>
+                            <div class="company_address">
+                                <h3>Our Information :</h3>
+                                        <p><font size="+1.5"><b>AAQsolution, Inc.</b></font></p>
+                                        <p><i>6942 N 74th Ave</i></p><i>
+                                        <p>Glendale, AZ 85303</p>
+                                        <p></p></i>
+                                <p>Phone: <b>(714) 224-8238</b></p>
+                                <p>Email: <span>aaqsolution@gmail.com</span></p>
+                                <p>Appointment Monday - Saturday 8 am to 7 pm.</p>
+                                <p>Follow on: 
+                                        <span><a href="https://www.facebook.com/promotionptaz"><img src="images/face_follow.png"></a></span>        
+                                        <span><a href="https://plus.google.com/109124683524310781773/"><img src="images/g+_follow.png"></a>
+                                                </span>
+                                </p>
+                           </div>
+                        </div>   
+
+                        <div class="col span_2_of_3">
+                            <div class="contact-form">
+                            <h3>Contact Us</h3>
+                                    <form method="post" action="" onsubmit="return checkform();">
+                                    <div id="errormessage" style="color:red;"></div>
+
+                                    <div>
+                                        <span><label>NAME</label></span>
+                                        <span><input name="name" id="name" type="text" class="textbox"></span>
+                                    </div>
+                                    <div>
+                                        <span><label>E-MAIL</label></span>
+                                        <span><input name="email" id="email" type="text" class="textbox"></span>
+                                    </div>
+                                    <div>
+                                        <span><label>MOBILE</label></span>
+                                        <span><input name="phone" id="phone" type="text" class="textbox"></span>
+                                    </div>
+                                    <div>
+                                        <span><label>SUBJECT</label></span>
+                                        <span><textarea name="message" id="message"> </textarea></span>
+                                    </div>
+                                   <div>
+                                        <span><input type="submit" value="Submit"></span>
+                                  </div>
+                                </form>
+                            </div>
+                        </div>              
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+<?php /*
     <ul class="breadcrumb">
         <li><a href="<?php echo Yii::app()->createAbsoluteUrl('/'); ?>">Home</a></li>
         <li>Contact Us</li>
@@ -136,7 +202,6 @@
 </script>
 
 
-<?php /*
 <div class="main clearfix">
     <div class="breadcrumb"><a href="<?php echo Yii::app()->createAbsoluteUrl('/'); ?>">Home</a> <strong>contact Us</strong></div>
     <h1 class="title-2">Contact Us</h1>                
