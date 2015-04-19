@@ -1,11 +1,11 @@
 <?php
 $this->breadcrumbs=array(
-	$this->pluralTitle => array('indexInactive'),
+	$this->pluralTitle => array('index'),
 	'Create ' . $this->singleTitle,
 );
 
 $this->menu = array(		
-        // array('label'=> $this->pluralTitle , 'url'=>array('indexInactive'), 'icon' => $this->iconList),
+        array('label'=> $this->pluralTitle , 'url'=>array('index', 'type'=>$type ), 'icon' => $this->iconList),
 );
 
 ?>

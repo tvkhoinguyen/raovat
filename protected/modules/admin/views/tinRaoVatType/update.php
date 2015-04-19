@@ -1,13 +1,13 @@
 <?php
 $this->breadcrumbs = array(
-	$this->pluralTitle => array('indexInactive'),
+	$this->pluralTitle => array('index'),
 	'Update ' . $this->singleTitle,
 );
 
 $this->menu = array(	
-	array('label' => $this->pluralTitle, 'url' => array('indexInactive'), 'icon' => $this->iconList),
-	array('label' => 'View ' . $this->singleTitle, 'url' => array('view', 'id' => $model->id)),	
-	// array('label' => 'Create ' . $this->singleTitle, 'url' => array('create')),
+	array('label' => $this->pluralTitle, 'url' => array('index', 'type'=>$type), 'icon' => $this->iconList),
+	array('label' => 'View ' . $this->singleTitle, 'url' => array('view', 'id' => $model->id, 'type'=>$type)),	
+	array('label' => 'Create ' . $this->singleTitle, 'url' => array('create', 'type'=>$type)),
 );
 ?>
 

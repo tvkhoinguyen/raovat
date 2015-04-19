@@ -10,7 +10,8 @@ class ContactForm extends CFormModel
 	public $name;
 	public $phone;
 	public $email;
-	public $message;
+    public $message;
+	public $subject;
 	public $company;
         public $verifyCode = false;
         public $enquiry_type;
@@ -22,7 +23,7 @@ class ContactForm extends CFormModel
 	{
             return array(
                 // name, email, subject and body are required
-		        array('name,email, message', 'required', 'on' => 'create'),
+		        array('name,phone,subject, message', 'required', 'on' => 'create'),
                 array('phone', 'length', 'max'=>30),
                 // array('verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements()),
                 array('name, email', 'length', 'max'=>200),
@@ -53,9 +54,10 @@ class ContactForm extends CFormModel
         return array(
             'email'=>'Email',
             'name'=>'Name',
-            'phone'=>'Tel',
-            'message'=>'Enquiry',
+            'phone'=>'Phone',
+            'message'=>'Message',
             'company'=>'Company Name',
+            'subject'=>'Subject',
         );
     }
 }

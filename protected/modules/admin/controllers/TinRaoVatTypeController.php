@@ -1,11 +1,11 @@
 <?php
 
-class TinRaoVatController extends AdminController
+class TinRaoVatTypeController extends AdminController
 {
-    public $pluralTitle = 'Duyệt Tin Rao Vặt';
-    public $singleTitle = 'Duyệt Tin Rao Vặt';
+    public $pluralTitle = 'Tin Rao Vặt';
+    public $singleTitle = 'Tin Rao Vặt';
     public $cannotDelete = array();
-    public function actionCreate()
+    public function actionCreate($type)
     {
         $model = new TinRaoVat('create_be');
         $user = Users::model()->findByPk(Yii::app()->user->id);
@@ -13,7 +13,8 @@ class TinRaoVatController extends AdminController
         $model->post_user_id = Yii::app()->user->id;
 
 
-        if (isset($_POST['TinRaoVat'])) {
+        if (isset($_POST['TinRaoVat'])) 
+        {
             $model->attributes = $_POST['TinRaoVat'];
             if($model->save())
 			{ 	
@@ -25,7 +26,7 @@ class TinRaoVatController extends AdminController
                 $model->saveImage('image1');
                 $model->saveImage('image2');
 				$this->setNotifyMessage(NotificationType::Success, $this->singleTitle . ' has been created');
-                $this->redirect(array('view', 'id'=> $model->id));
+                $this->redirect(array('view', 'id'=> $model->id, 'type'=>$type ));
 			}
 			else
 				$this->setNotifyMessage(NotificationType::Error, $this->singleTitle . ' cannot be created for some reasons');
@@ -65,8 +66,10 @@ class TinRaoVatController extends AdminController
         }
     }      
     
-    public function actionIndex() {
-        try {
+    
+
+    public function actionIndex($type) 
+    {
             $model=new TinRaoVat('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['TinRaoVat']))
@@ -74,30 +77,11 @@ class TinRaoVatController extends AdminController
 
             $this->render('index',array(
                 'model'=>$model, 'actions' => $this->listActionsCanAccess,
+                'type'=>$type,
             ));
-        } catch (Exception $e) {
-            //Yii::log("Exception ".  print_r($e, true), 'error');
-            //throw  new CHttpException($e);
-        }
     }
 
-    public function actionIndexInActive() {
-        try {
-            $model=new TinRaoVat('search');
-            $model->unsetAttributes();  // clear any default values
-            if(isset($_GET['TinRaoVat']))
-                $model->attributes=$_GET['TinRaoVat'];
-            // $model->status = STATUS_NEW;
-            $this->render('index',array(
-                'model'=>$model, 'actions' => $this->listActionsCanAccess,
-            ));
-        } catch (Exception $e) {
-            //Yii::log("Exception ".  print_r($e, true), 'error');
-            //throw  new CHttpException($e);
-        }
-    }
-
-    public function actionUpdate($id) 
+    public function actionUpdate($id, $type) 
     {
         $model=$this->loadModel($id);
         $user = Users::model()->findByPk(Yii::app()->user->id);
@@ -144,7 +128,7 @@ class TinRaoVatController extends AdminController
                 }
 
 				$this->setNotifyMessage(NotificationType::Success, $this->singleTitle . ' has been updated');
-				$this->redirect(array('view', 'id'=> $model->id));
+				$this->redirect(array('view', 'id'=> $model->id,'type'=>$type ));
 			}
 			else
 				$this->setNotifyMessage(NotificationType::Error, $this->singleTitle . ' cannot be updated for some reasons');
@@ -157,7 +141,7 @@ class TinRaoVatController extends AdminController
     }
 
     
-    public function actionView($id) {
+    public function actionView($id, $type) {
         // try {
             $model = $this->loadModel($id);
             $this->render('view', array(
@@ -191,7 +175,8 @@ class TinRaoVatController extends AdminController
 	}
 	
 		
-    public function loadModel($id){
+    public function loadModel($id)
+    {
 		//need this define for inherit model case. Form will render parent model name in control if we don't have this line
 		$initMode = new TinRaoVat();
         $model=$initMode->findByPk($id);

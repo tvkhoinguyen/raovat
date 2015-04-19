@@ -1,3 +1,12 @@
+<style type="text/css">
+    .errorMessage{
+        color: red;
+    }
+    span.required{
+        color:red;
+        display: inline;
+    }
+</style>
 <div class="row">
     <div id="t3-content" class="t3-content">
         <div class="row">
@@ -31,29 +40,62 @@
                         <div class="col span_2_of_3">
                             <div class="contact-form">
                             <h3>Contact Us</h3>
-                                    <form method="post" action="" onsubmit="return checkform();">
-                                    <div id="errormessage" style="color:red;"></div>
-
+                                    <!-- <form method="post" action="" onsubmit="return checkform();"> -->
+                                    <?php 
+                                        $form=$this->beginWidget('CActiveForm', array(
+                                            'id'=>'contact-us-form',
+                                            'htmlOptions'=>array('class'=>'form-horizontal', 'role'=>'form'),
+                                            'enableClientValidation' => false,
+                                            'enableAjaxValidation' => false,
+                                            'clientOptions' => array(
+                                                'validateOnSubmit' => true,
+                                            ),
+                                        ));
+                                    ?>
+                                    <?php if (Yii::app()->user->hasFlash('msg')): ?>
+                                        <div class="alert alert-success alert-dismissible" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                            <?php echo Yii::app()->user->getFlash('msg'); ?>
+                                        </div>
+                                    <?php endif; ?>
+                    
                                     <div>
-                                        <span><label>NAME</label></span>
-                                        <span><input name="name" id="name" type="text" class="textbox"></span>
+                                        <span><label>NAME<span class="required">*</span></label></span>
+                                        <!-- <span><input name="name" id="name" type="text" class="textbox"></span> -->
+                                        <?php echo $form->textField($model,'name', array('class'=>'textbox', 'placeholder'=>'Enter your name here')); ?>
+                                        <?php echo $form->error($model,'name'); ?> 
                                     </div>
                                     <div>
                                         <span><label>E-MAIL</label></span>
-                                        <span><input name="email" id="email" type="text" class="textbox"></span>
+                                        <!-- <span><input name="email" id="email" type="text" class="textbox"></span> -->
+                                        <?php echo $form->textField($model,'email', array('class'=>'textbox', 'placeholder'=>'Enter your email')); ?>
+                                        <?php echo $form->error($model,'email'); ?> 
                                     </div>
                                     <div>
-                                        <span><label>MOBILE</label></span>
-                                        <span><input name="phone" id="phone" type="text" class="textbox"></span>
+                                        <span><label>PHONE<span class="required">*</span></label></span>
+                                        <!-- <span><input name="phone" id="phone" type="text" class="textbox"></span> -->
+                                        <?php echo $form->textField($model,'phone', array('class'=>'textbox', 'placeholder'=>'Your phone number')); ?>
+                                        <?php echo $form->error($model,'phone'); ?> 
                                     </div>
                                     <div>
-                                        <span><label>SUBJECT</label></span>
-                                        <span><textarea name="message" id="message"> </textarea></span>
+                                        <span><label>SUBJECT<span class="required">*</span></label></span>
+                                        <!-- <span><textarea name="message" id="message"> </textarea></span> -->
+                                        <?php echo $form->textField($model,'subject', array('class'=>'textbox', 'placeholder'=>'')); ?>
+                                        <?php echo $form->error($model,'subject'); ?> 
                                     </div>
+                                    <div>
+                                        <span><label>MESSAGE<span class="required">*</span></label></span>
+                                        <!-- <span><textarea name="message" id="message"> </textarea></span> -->
+                                        <?php echo $form->textArea($model, 'message', array('class' => 'txt', 'rows'=>"0", 'cols'=>"0", 'placeholder'=>'Your Message')); ?>
+                                        <?php echo $form->error($model,'message'); ?> 
+                                    </div>
+
+                                    
                                    <div>
                                         <span><input type="submit" value="Submit"></span>
                                   </div>
-                                </form>
+                                <!-- </form> -->
+                                <?php $this->endWidget(); ?>
                             </div>
                         </div>              
                     </div>

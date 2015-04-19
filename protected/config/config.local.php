@@ -10,7 +10,14 @@ include 'config_host/host.php';
 
 define('TIN_3_NGAY', 1);
 define('TIN_7_NGAY', 2);
-define('TIN_30_NGAY', 3);
+define('TIN_14_NGAY', 3);
+define('TIN_1_THANG', 4);
+define('TIN_2_THANG', 5);
+define('TIN_3_THANG', 6);
+define('TIN_4_THANG', 7);
+define('TIN_5_THANG', 8);
+define('TIN_6_THANG', 9);
+define('TIN_1_NAM', 10);
 
 define('BE', 1);
 define('FE', 2);
@@ -100,18 +107,25 @@ define('PAGE_SUCCESS_SIGN_UP', 8);
 define('PAGE_SUCCESS_RESET_PASSWORD', 13);
 
 //mail
-define('MAIL_REGISTER_SUCCEED_TO_MEMBER', 1);
-define('MAIL_REGISTER_SUCCEED_TO_ADMIN', 2);
-define('MAIL_FORGET_PASSWORD', 3);
+// define('MAIL_REGISTER_SUCCEED_TO_MEMBER', 1);
+// define('MAIL_REGISTER_SUCCEED_TO_ADMIN', 2);
+// define('MAIL_FORGET_PASSWORD', 3);
 define('MAIL_CONTACT_US_TO_ADMIN',4);   //contact us send admin
-define('MAIL_CONTACT_US_TO_USER',5);	//contact us send User
-define('MAIL_CHANGE_PASSWORD_TO_USER',6);
-define('MAIL_VERIFY_TO_RESET_PASSWORD_TO_ADMIN',7);
-define('MAIL_RESET_PASSWORD_TO_ADMIN',8);
-define('MAIL_CHANGE_PASSWORD_TO_ADMIN',9);
-define('MAIL_ADMIN_RESET_PASS', 28);
-define('MAIL_ADMIN_REQUEST', 30);
-define('MAIL_USER_REQUEST', 31);
+// define('MAIL_CONTACT_US_TO_USER',5);	//contact us send User
+// define('MAIL_CHANGE_PASSWORD_TO_USER',6);
+// define('MAIL_VERIFY_TO_RESET_PASSWORD_TO_ADMIN',7);
+// define('MAIL_RESET_PASSWORD_TO_ADMIN',8);
+// define('MAIL_CHANGE_PASSWORD_TO_ADMIN',9);
+// define('MAIL_ADMIN_RESET_PASS', 28);
+// define('MAIL_ADMIN_REQUEST', 30);
+// define('MAIL_USER_REQUEST', 31);
+define('MAIL_ADMIN_AFTER_DANG_TIN', 33);
+
+
+
+
+
+
 
 //max time for failed login to show captcha required
 define('MAX_TIME_TO_SHOW_CAPTCHA', 2);

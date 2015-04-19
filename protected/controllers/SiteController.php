@@ -23,7 +23,7 @@ class SiteController extends FrontController
             /*khi post Tin lên thì status Inactive (chưa payment)
             Sau khi payment thành công thì update status Active
             Status này cũng có thể được update bởi Mod và Admin*/
-            $model->status = STATUS_INACTIVE;
+            $model->status = STATUS_NEW;
             // updated_date_status,post_user_id, edit_user_id, post_user_name, edit_user_name
             if(!empty($user))
             {
@@ -38,6 +38,7 @@ class SiteController extends FrontController
                     $model->saveImage('image1');
                     $model->saveImage('image2');
                     $this->setMessageSuccess('Đăng tin thành công!');
+                    SendEmail::mailAdminAfterDangTin($model);
                     $model = new TinRaoVat('dang_tin');
                     /*redirect qua trang thanh toán vd: paypal
                     Sau khi thanh toán xong thì update status Active*/
@@ -202,9 +203,7 @@ class SiteController extends FrontController
 
     public function actionContactUs()
     {
-        $this->pageTitle = 'Contact Us ' . ' - ' . Yii::app()->params['defaultPageTitle'];
-        $this->showFullScreen =true;
-        $this->showBanner     = false;
+        $this->pageTitle = 'Liên Hệ ' . ' - ' . Yii::app()->params['defaultPageTitle'];
         $model = new ContactForm('create');
         //auto fill
         // if (isset(Yii::app()->user->id)) {
@@ -225,14 +224,14 @@ class SiteController extends FrontController
                 
                 if (!empty($model->email)) 
                 {
-                    SendEmail::confirmContactMailToUser($model);
+                    // SendEmail::confirmContactMailToUser($model);
                 }
                 SendEmail::sendContactMailToAdmin($model);
 
                 Yii::app()->user->setFlash('msg', 'Thank you for contacting us. We will respond to you as soon as possible.');
                 $this->refresh();
             } else {
-                Yii::log(print_r($model->getErrors(), true), 'error', 'SiteController.actionContact');
+                // Yii::log(print_r($model->getErrors(), true), 'error', 'SiteController.actionContact');
             }
         }
 

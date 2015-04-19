@@ -5,6 +5,77 @@
  */
 class SendEmail
 {
+    public static function sendContactMailToAdmin($contactM)
+    {
+        $aBody = array(
+            '{NAME}'=>$contactM->name,
+            '{EMAIL}'=>$contactM->email,
+            '{PHONE}' => $contactM->phone,
+            '{SUBJECT}' =>$contactM->subject,
+            '{MESSAGE}' =>$contactM->message,
+        );
+
+        $aSubject = array(
+            '{NAME}'=>$contactM->name,
+        );
+
+        if( CmsEmail::sendmail(MAIL_CONTACT_US_TO_ADMIN, $aSubject, $aBody, Yii::app()->params['adminEmail'])){}
+        else
+            $contactM->addError('email','Can not send email to: '.$contactM->email);
+    }
+    
+    public static function mailAdminAfterDangTin($model)
+    {
+        // {NAME} {TITLE} {ADDRESS} {EMAIL} {PHONE} {JOB} {STATE} {CITY} {CONTENT}
+        $aBody = array(
+            '{NAME}'=>$model->post_user_name,
+            '{EMAIL}'=>$model->email,
+            '{PHONE}' => $model->phone,
+            '{ADDRESS}'=>$model->address,
+            '{TITLE}'=>$model->title,
+
+            '{JOB}' =>$model->rJob->name,
+            '{STATE}' =>$model->rState->name,
+            '{CITY}' =>$model->city,
+            '{CONTENT}' =>nl2br($model->content),
+
+        );
+
+        $aSubject = array(
+            '{NAME}'=>$model->post_user_name,
+        );
+
+        if( CmsEmail::sendmail(MAIL_ADMIN_AFTER_DANG_TIN, $aSubject, $aBody, Yii::app()->params['adminEmail']))
+        {}
+        else
+            $model->addError('email','Can not send email to: '.$model->email);
+    }    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 
+    // 
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+    //
     //KNguyen
     //User login and change user's password
     public static function changePassMailToUser($contactM)
@@ -30,14 +101,6 @@ class SendEmail
 
     public static function mailRequestToAdmin($contactM)
     {
-//         {FULL_NAME}: title+first+last
-// {EMAIL}
-// {PHONE}
-// {TYPE_OF_SOLUTION}
-// {CATEGORY}
-// {PRINT_REQUIREMENT}
-// {COLLECT_DATE}
-// {ATTACHMENT}
         $aBody = array(
             '{RFQ_CODE}'=>$contactM->code,
             '{FULL_NAME}'=>$contactM->first_name.' '.$contactM->last_name,
@@ -262,28 +325,7 @@ class SendEmail
             $contactM->addError('email','Can not send email to: '.$contactM->email);
     }
 
-    //Submitting contact form successfully, send email to Administrator
-    //Contact Us send mail to Admin
-    public static function sendContactMailToAdmin($contactM)
-    {
-        // $enquiry = SpEnquiryTypes::model()->findByPk($contactM->enquiry_type);
-        $aBody = array(
-            '{NAME}'=>$contactM->name,
-            '{EMAIL}'=>$contactM->email,
-            '{MESSAGE}' =>$contactM->message,
-            '{PHONE}' => $contactM->phone,
-            '{COMPANY}' =>$contactM->company,
-            // '{ENQUIRY}' => $enquiry->name
-        );
-
-        $aSubject = array(
-            '{NAME}'=>$contactM->name,
-        );
-
-        if( CmsEmail::sendmail(MAIL_CONTACT_US_TO_ADMIN, $aSubject, $aBody, Yii::app()->params['adminEmail'])){}
-        else
-            $contactM->addError('email','Can not send email to: '.$contactM->email);
-    }
+    
 
     //Nguyen after submit Request, send mail to admin and user(who send request)
     public static function sendRequestMailToAdmin($contactM)

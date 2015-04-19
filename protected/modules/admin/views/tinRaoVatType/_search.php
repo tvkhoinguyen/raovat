@@ -6,6 +6,7 @@
 		'method'=>'get',
 		'htmlOptions' => array('class' => 'form-horizontal', 'role' => 'form', 'id' => 'search-form'),
 	)); ?>
+		<input type="hidden" name="type" value="<?php echo $type; ?>" />
 			<div class="col-sm-4">
 				<div class="form-group form-group-sm">
 					<?php echo $form->labelEx($model,'title', array('class' => 'col-sm-3 control-label')); ?>
@@ -25,7 +26,7 @@
 				</div>
 			</div>
 
-			<?php /*<div class="col-sm-4">
+			<div class="col-sm-4">
 				<div class="form-group form-group-sm">
 					<?php echo $form->labelEx($model,'status', array('class' => 'col-sm-3 control-label')); ?>
 					<div class="col-sm-7">
@@ -34,7 +35,6 @@
 					</div>
 				</div>
 			</div>
-			*/ ?>
 			
 			<div class="col-sm-4">
 				<div class="form-group form-group-sm">

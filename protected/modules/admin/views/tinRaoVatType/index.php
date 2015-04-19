@@ -3,7 +3,7 @@ $this->breadcrumbs=array(
 	$this->pluralTitle,
 );
 $this->menu=array(
-	// array('label'=>'Create ' . $this->singleTitle, 'url'=>array('create')),
+	array('label'=>'Create ' . $this->singleTitle, 'url'=>array('create', 'type'=>$type)),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -63,6 +63,7 @@ Yii::app()->clientScript->registerScript('ajaxupdate', "
 <div class='search-form' style='display:none'>
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
+	'type'=>$type,
 )); ?></div>
 
 <?php echo $this->renderControlNav();?>
@@ -93,6 +94,10 @@ Yii::app()->clientScript->registerScript('ajaxupdate', "
 					'header'=>'Post User Name',
 					'name'=>'post_user_name',
 				),
+				// array(
+				// 	'header'=>'Edit User Name',
+				// 	'name'=>'edit_user_name',
+				// ),
 				'title',
 				
 				// 'image1',
@@ -119,35 +124,26 @@ Yii::app()->clientScript->registerScript('ajaxupdate', "
 				array(
 					//'header' => 'customHeader',
 					'name'=>'status',
-					// 'type'=>'status',
-					'type'=>'html',
-					// 'value'=>'array("id"=>$data->id,"status"=>$data->status)',
-					'value'=>' ($data->status == STATUS_NEW) ? "<font color=\'red\'>New</font>" : "" ',
+					'type'=>'status',
+					'value'=>'array("id"=>$data->id,"status"=>$data->status)',
 					'htmlOptions' => array('style' => 'text-align:center;')
 			   ),
 				array(
 					//'header' => 'customHeader',
-					'name' => 'loai_tin',
-					'type'=>'html',
+					'name' => 'order_display',
 					'htmlOptions' => array('style' => 'text-align:right;'),
-					'value'=>' "<b>". TinRaoVat::$loai_tin[$data->loai_tin]. "</b>" ',
 				),
-				// array(
-				// 	//'header' => 'customHeader',
-				// 	'name' => 'order_display',
-				// 	'htmlOptions' => array('style' => 'text-align:right;'),
-				// ),
-				// array(
-				// 	//'header' => 'customHeader',
-				// 	'name' => 'is_hot',
-				// 	'type'=>'YesNo',
-				// 	'htmlOptions' => array('style' => 'text-align:right;'),
-				// ),
-				// array(
-				// 	'name' => 'is_new',
-				// 	'type'=>'YesNo',
-				// 	'htmlOptions' => array('style' => 'text-align:right;'),
-				// ),
+				array(
+					//'header' => 'customHeader',
+					'name' => 'is_hot',
+					'type'=>'YesNo',
+					'htmlOptions' => array('style' => 'text-align:right;'),
+				),
+				array(
+					'name' => 'is_new',
+					'type'=>'YesNo',
+					'htmlOptions' => array('style' => 'text-align:right;'),
+				),
 				
 				'phone',
 				// 'mobile',
@@ -164,18 +160,26 @@ Yii::app()->clientScript->registerScript('ajaxupdate', "
 					'htmlOptions' => array('style' => 'text-align:right;'),
 				),
 				'city',
+
+				// array(
+				// 	//'header' => 'Loại Tin',
+				// 	'name' => 'loat_tin',
+				// 	'type' => 'date',
+				// 	'htmlOptions' => array('style' => 'text-align:center;'),
+				// ),
+
 				array(
 					//'header' => 'customHeader',
 					'name' => 'created_date',
 					'type' => 'date',
 					'htmlOptions' => array('style' => 'text-align:center;'),
 				),
-				// array(
-				// 	//'header' => 'customHeader',
-				// 	'name' => 'updated_date',
-				// 	'type' => 'date',
-				// 	'htmlOptions' => array('style' => 'text-align:center;'),
-				// ),
+				array(
+					//'header' => 'customHeader',
+					'name' => 'updated_date',
+					'type' => 'date',
+					'htmlOptions' => array('style' => 'text-align:center;'),
+				),
 				array(
 					'header' => 'Actions',
 					'class'=>'CButtonColumn',
@@ -195,13 +199,58 @@ Yii::app()->clientScript->registerScript('ajaxupdate', "
 			$this->renderNotifyMessage(); 
 			$this->renderDeleteAllButton(); 
 			
+			$dataProvider='';
+			switch ($type) 
+			{
+				case '3ngay':
+					$dataProvider = $model->searchIndexType(TIN_3_NGAY);
+					break;
+				case '7ngay':
+					// $criteria->addCondition(" loai_tin=".TIN_7_NGAY." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_7_NGAY);
+					break;
+				case '14ngay':
+					// $criteria->addCondition(" loai_tin=".TIN_14_NGAY." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_14_NGAY);
+					break;
+				case '1thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_1_THANG);
+					break;
+				case '2thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_2_THANG);
+					break;
+				case '3thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_3_THANG);
+					break;
+				case '4thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_4_THANG);
+					break;
+				case '5thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_5_THANG);
+					break;
+				case '6thang':
+					// $criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_6_THANG);
+					break;
+				
+				case '1nam':
+					// $criteria->addCondition(" loai_tin=".TIN_1_NAM." AND status=".ACTIVE);
+					$dataProvider = $model->searchIndexType(TIN_1_NAM);
+					break;
+			}
+
 			$this->widget('zii.widgets.grid.CGridView', array(
 				'id'=>'tin-rao-vat-grid',
 				//KNguyen fix holder.js not load after gridview update
 				//By: add new jquery gridview and content in Folder:  customassets/gridview
 				//And custom update function
 				//'baseScriptUrl'=>Yii::app()->baseUrl.DIRECTORY_SEPARATOR.'customassets'.DIRECTORY_SEPARATOR.'gridview',
-				'dataProvider'=>$model->searchIndexInActive(),
+				'dataProvider'=>$dataProvider,
 				'pager'=>array(
 							'header'         => '',
 							'prevPageLabel'  => 'Prev',

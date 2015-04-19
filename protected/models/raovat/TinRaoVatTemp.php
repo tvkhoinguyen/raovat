@@ -1,21 +1,14 @@
 <?php
-class TinRaoVat extends _BaseModel 
+class TinRaoVatTemp extends _BaseModel 
 {
 	public $verifyCode;
 	public $s_state_id;
 	public $s_job_id;
-	public static $loai_tin = array(
-		TIN_3_NGAY =>'Tin 3 ngày',
-		TIN_7_NGAY =>'Tin 7 ngày',
-		TIN_14_NGAY =>'Tin 14 ngày',
-		TIN_1_THANG =>'Tin 1 tháng',
-		TIN_2_THANG =>'Tin 2 tháng',
-		TIN_3_THANG =>'Tin 3 tháng',
-		TIN_4_THANG =>'Tin 4 tháng',
-		TIN_5_THANG =>'Tin 5 tháng',
-		TIN_6_THANG =>'Tin 6 tháng',
-		TIN_1_NAM =>'Tin 1 năm',
-		);
+	// public static $loai_tin = array(
+	// 	TIN_3_NGAY =>'Tin 3 ngày',
+	// 	TIN_7_NGAY =>'Tin 7 ngày',
+	// 	TIN_30_NGAY =>'Tin 30 ngày',
+	// 	);
 	public $maxImageFileSize = 3145728; //3MB
 	public $allowImageType = 'jpg,gif,png';
 	public $uploadImageFolder = 'upload/tin_rao_vat'; //remember remove ending slash
@@ -155,124 +148,6 @@ class TinRaoVat extends _BaseModel
 		$criteria->compare('edit_user_name',$this->edit_user_name,true);
 					
 		 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-			'pagination'=>array(
-                'pageSize'=> Yii::app()->params['defaultPageSize'],
-            ),
-		));
-	}
-
-	public function searchIndexInActive()
-	{
-		$criteria=new CDbCriteria;
-
-		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('short_content',$this->short_content,true);
-		$criteria->compare('content',$this->content,true);
-		// $criteria->compare('status',$this->status);
-		// $criteria->compare('image1',$this->image1,true);
-		// $criteria->compare('image2',$this->image2,true);
-		// $criteria->compare('order_display',$this->order_display);
-		$criteria->compare('is_hot',$this->is_hot);
-		$criteria->compare('is_new',$this->is_new);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('mobile',$this->mobile,true);
-		$criteria->compare('state_id',$this->state_id);
-		$criteria->compare('city',$this->city,true);
-		$criteria->compare('created_date',$this->created_date,true);
-		$criteria->compare('updated_date',$this->updated_date,true);
-		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('job_id',$this->job_id);
-		$criteria->compare('updated_date_status',$this->updated_date_status,true);
-		$criteria->compare('view',$this->view);
-		$criteria->compare('loai_tin',$this->loai_tin);
-		$criteria->compare('post_user_id',$this->post_user_id);
-		$criteria->compare('edit_user_id',$this->edit_user_id);
-		$criteria->compare('post_user_name',$this->post_user_name,true);
-		$criteria->compare('edit_user_name',$this->edit_user_name,true);
-		
-		$criteria->addCondition("status=".STATUS_NEW);
-		if(!isset($_GET['ajax']))
-			$criteria->order = "ID DESC";
-		 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-			'pagination'=>array(
-                'pageSize'=> Yii::app()->params['defaultPageSize'],
-            ),
-		));
-	}
-
-
-	public function searchIndexType($type)
-	{
-
-		$criteria=new CDbCriteria;
-		$criteria->compare('id',$this->id);
-		$criteria->compare('title',$this->title,true);
-		$criteria->compare('short_content',$this->short_content,true);
-		$criteria->compare('content',$this->content,true);
-		$criteria->compare('status',$this->status);
-		$criteria->compare('image1',$this->image1,true);
-		$criteria->compare('image2',$this->image2,true);
-		$criteria->compare('order_display',$this->order_display);
-		$criteria->compare('is_hot',$this->is_hot);
-		$criteria->compare('is_new',$this->is_new);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('mobile',$this->mobile,true);
-		$criteria->compare('state_id',$this->state_id);
-		$criteria->compare('city',$this->city,true);
-		$criteria->compare('created_date',$this->created_date,true);
-		$criteria->compare('updated_date',$this->updated_date,true);
-		$criteria->compare('slug',$this->slug,true);
-		$criteria->compare('job_id',$this->job_id);
-		$criteria->compare('updated_date_status',$this->updated_date_status,true);
-		$criteria->compare('view',$this->view);
-		$criteria->compare('loai_tin',$this->loai_tin);
-		$criteria->compare('post_user_id',$this->post_user_id);
-		$criteria->compare('edit_user_id',$this->edit_user_id);
-		$criteria->compare('post_user_name',$this->post_user_name,true);
-		$criteria->compare('edit_user_name',$this->edit_user_name,true);
-		
-		switch ($type) 
-		{
-			case TIN_3_NGAY:
-				$criteria->addCondition(" loai_tin=".TIN_3_NGAY." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_7_NGAY:
-				$criteria->addCondition(" loai_tin=".TIN_7_NGAY." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_14_NGAY:
-				$criteria->addCondition(" loai_tin=".TIN_14_NGAY." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_1_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_1_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_2_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_2_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_3_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_3_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_4_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_4_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_5_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_5_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_6_THANG:
-				$criteria->addCondition(" loai_tin=".TIN_6_THANG." AND status=".STATUS_ACTIVE);
-				break;
-			case TIN_1_NAM:
-				$criteria->addCondition(" loai_tin=".TIN_1_NAM." AND status=".STATUS_ACTIVE);
-				break;
-		}
-
-		if(!isset($_GET['ajax']))
-			$criteria->order = "ID DESC";
-
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination'=>array(
@@ -463,7 +338,7 @@ class TinRaoVat extends _BaseModel
 
 		$criteria->addCondition('t.status = '.STATUS_ACTIVE);	
 		// $criteria->addCondition('t.is_hot = '.TYPE_YES);	
-		$criteria->addCondition(' ( t.loai_tin='.TIN_7_NGAY. ' OR t.loai_tin='.TIN_1_THANG.' ) ');	
+		$criteria->addCondition(' ( t.loai_tin='.TIN_7_NGAY. ' OR t.loai_tin='.TIN_30_NGAY.' ) ');	
 		$criteria->order = ' updated_date DESC, order_display DESC ';
 		 
 		return new CActiveDataProvider($this, array(
@@ -645,37 +520,9 @@ class TinRaoVat extends _BaseModel
     	{
     		$elapsed = 7*24*60*60;
     	}
-    	else if($this->loai_tin == TIN_14_NGAY)
-    	{
-    		$elapsed = 14*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_1_THANG)
+    	else if($this->loai_tin == TIN_7_NGAY)
     	{
     		$elapsed = 30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_2_THANG)
-    	{
-    		$elapsed = 2*30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_3_THANG)
-    	{
-    		$elapsed = 3*30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_4_THANG)
-    	{
-    		$elapsed = 4*30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_5_THANG)
-    	{
-    		$elapsed = 5*30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_6_THANG)
-    	{
-    		$elapsed = 6*30*24*60*60;
-    	}
-    	else if($this->loai_tin == TIN_1_NAM)
-    	{
-    		$elapsed = 12*30*24*60*60;
     	}
     	else{
     		$elapsed = '';
