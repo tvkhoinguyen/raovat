@@ -1,9 +1,9 @@
 <?php
 
-class TinRaoVatController extends AdminController
+class TinRaoVatHiddenController extends AdminController
 {
-    public $pluralTitle = 'Duyệt Tin Rao Vặt';
-    public $singleTitle = 'Duyệt Tin Rao Vặt';
+    public $pluralTitle = 'Tin Rao Vặt';
+    public $singleTitle = 'Tin Rao Vặt';
     public $cannotDelete = array();
     public function actionCreate()
     {
@@ -81,29 +81,13 @@ class TinRaoVatController extends AdminController
         }
     }
 
-    public function actionIndexInActive() {
+    public function actionIndex() {
         try {
             $model=new TinRaoVat('search');
             $model->unsetAttributes();  // clear any default values
             if(isset($_GET['TinRaoVat']))
                 $model->attributes=$_GET['TinRaoVat'];
             // $model->status = STATUS_NEW;
-            $this->render('index',array(
-                'model'=>$model, 'actions' => $this->listActionsCanAccess,
-            ));
-        } catch (Exception $e) {
-            //Yii::log("Exception ".  print_r($e, true), 'error');
-            //throw  new CHttpException($e);
-        }
-    }
-
-    public function actionIndexHidden() {
-        try {
-            $model=new TinRaoVat('search');
-            $model->unsetAttributes();  // clear any default values
-            if(isset($_GET['TinRaoVat']))
-                $model->attributes=$_GET['TinRaoVat'];
-            $model->status = STATUS_INACTIVE;
             $this->render('index',array(
                 'model'=>$model, 'actions' => $this->listActionsCanAccess,
             ));

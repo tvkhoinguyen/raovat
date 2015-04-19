@@ -205,6 +205,48 @@ class TinRaoVat extends _BaseModel
 		));
 	}
 
+	public function searchIndexHidden()
+	{
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id);
+		$criteria->compare('title',$this->title,true);
+		$criteria->compare('short_content',$this->short_content,true);
+		$criteria->compare('content',$this->content,true);
+		// $criteria->compare('status',$this->status);
+		// $criteria->compare('image1',$this->image1,true);
+		// $criteria->compare('image2',$this->image2,true);
+		// $criteria->compare('order_display',$this->order_display);
+		$criteria->compare('is_hot',$this->is_hot);
+		$criteria->compare('is_new',$this->is_new);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('mobile',$this->mobile,true);
+		$criteria->compare('state_id',$this->state_id);
+		$criteria->compare('city',$this->city,true);
+		$criteria->compare('created_date',$this->created_date,true);
+		$criteria->compare('updated_date',$this->updated_date,true);
+		$criteria->compare('slug',$this->slug,true);
+		$criteria->compare('job_id',$this->job_id);
+		$criteria->compare('updated_date_status',$this->updated_date_status,true);
+		$criteria->compare('view',$this->view);
+		$criteria->compare('loai_tin',$this->loai_tin);
+		$criteria->compare('post_user_id',$this->post_user_id);
+		$criteria->compare('edit_user_id',$this->edit_user_id);
+		$criteria->compare('post_user_name',$this->post_user_name,true);
+		$criteria->compare('edit_user_name',$this->edit_user_name,true);
+		
+		$criteria->addCondition("status=".STATUS_INACTIVE);
+		if(!isset($_GET['ajax']))
+			$criteria->order = "ID DESC";
+		 
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+			'pagination'=>array(
+                'pageSize'=> Yii::app()->params['defaultPageSize'],
+            ),
+		));
+	}
+
 
 	public function searchIndexType($type)
 	{
