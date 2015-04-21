@@ -37,11 +37,17 @@ class SiteController extends FrontController
                 {
                     $model->saveImage('image1');
                     $model->saveImage('image2');
-                    $this->setMessageSuccess('Đăng tin thành công!');
+                    $this->setMessageSuccess('Đăng tin thành công! Đợi admin duyệt.');
                     SendEmail::mailAdminAfterDangTin($model);
                     $model = new TinRaoVat('dang_tin');
                     /*redirect qua trang thanh toán vd: paypal
                     Sau khi thanh toán xong thì update status Active*/
+                    if($model->loai_tin==TIN_3_NGAY)
+                    {}
+                    else{
+                        $this->redirect(LINK_PAYSIMPLE);    
+                    }
+                    
                 }
             }
         }
@@ -53,11 +59,81 @@ class SiteController extends FrontController
     /*Khi payment thanh toán thành công thì update lại status và updated_date_status*/
     public function actionAccessPayment() 
     {
-        // $model = 
-        // $model->status = STATUS_ACTIVE;
-        // $model->updated_date_status = date('Y-m-d H:i:s');
-        // $model->update( array('status', 'updated_date_status' ) );
+        if(isset($_POST))
+        {
+            echo '<pre>';
+            print_r($_POST);
+            echo '</pre>';
+            $path = YII_UPLOAD_DIR.'/paysimple.txt';
+            $myfile = fopen($path, "w") or die("Unable to open file!");
+            $txt = $_POST;
+            fwrite($myfile, $txt);
+            fclose($myfile);
+        }
     }
+
+    public function sendPaySimple()
+    {
+        // $userName = "jdmcpa4u";
+        // $superSecretCode = "<CODE HERE>";
+        // $timestamp = gmdate("c");
+        // $hmac = hash_hmac("sha256", $timestamp, $superSecretCode, true); //note the raw output parameter
+        // $hmac = base64_encode($hmac);                                                                                                                                                                                                                            
+        // $auth = "Authorization: PSSERVER AccessId = $userName; Timestamp = $timestamp; Signature = $hmac";
+        $url = "https://api.paysimple.com/v4/payment";
+        $post_args      = json_encode(array('AccountId'  => 37706,'Amount' => $_POST['hamount']));
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $post_args);
+        // curl_setopt($curl, CURLOPT_HTTPHEADER, array($auth));
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+        $server_output = curl_exec($curl);
+
+        curl_close ($curl);
+
+        echo '<pre>';
+        print_r($server_output);
+        echo '</pre>';
+        
+
+
+        /*
+        if ( isset( $_POST['submit-form'] ) ) {
+
+            // $userName = "<MYUSERNAME>";
+            // $superSecretCode = "<CODE HERE>";
+            // $timestamp = gmdate("c");
+            // $hmac = hash_hmac("sha256", $timestamp, $superSecretCode, true); //note the raw output parameter
+            // $hmac = base64_encode($hmac);                                                                                                                                                                                                                            
+            // $auth = "Authorization: PSSERVER AccessId = $userName; Timestamp = $timestamp; Signature = $hmac";
+            $url = "https://api.paysimple.com/v4/payment";
+
+            $post_args      = json_encode(array('AccountId'  => 37706,'Amount' => $_POST['hamount']));
+
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $post_args);
+            // curl_setopt($curl, CURLOPT_HTTPHEADER, array($auth));
+
+            $result = curl_exec($curl);
+
+            var_dump(curl_exec($curl));
+            $responseCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+            curl_close($curl);
+            echo "<br>response: $responseCode <br><br>";
+            die();
+            }
+        */
+    }
+
+    
 
     public function actionIndex()
     {
