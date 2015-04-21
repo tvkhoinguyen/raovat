@@ -11,8 +11,8 @@ class TinRaoVat extends _BaseModel
 		TIN_1_THANG =>'Tin 1 tháng',
 		TIN_2_THANG =>'Tin 2 tháng',
 		TIN_3_THANG =>'Tin 3 tháng',
-		TIN_4_THANG =>'Tin 4 tháng',
-		TIN_5_THANG =>'Tin 5 tháng',
+		// TIN_4_THANG =>'Tin 4 tháng',
+		// TIN_5_THANG =>'Tin 5 tháng',
 		TIN_6_THANG =>'Tin 6 tháng',
 		TIN_1_NAM =>'Tin 1 năm',
 		);
