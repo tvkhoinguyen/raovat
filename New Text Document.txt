@@ -1,0 +1,15 @@
+-check co code moi k
+git status
+
+-get code moi tu host git ve
+git pull
+hay git pull origin master
+
+- sau khi edit, them file moi, xoa file
+git add .
+
+git commit -m "message"
+
+git push 
+hay
+git push origin master

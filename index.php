@@ -33,3 +33,4 @@ require_once($yii);
 Yii::createWebApplication($config);
 SettingForm::applySettings();//override settings by values from database
 Yii::app()->run();
+//test github
