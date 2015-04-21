@@ -58,6 +58,22 @@ class SiteController extends FrontController
         ));
     }
 
+    public function actionPaySuccess()
+    {
+        $this->pageTitle = 'Đăng Tin Success'.' - '.Yii::app()->setting->getItem('defaultPageTitle');
+        $this->render('raovat/dang_tin_success', array(
+            // 'model' => $model,
+        ));
+    }
+
+    public function actionPayError()
+    {
+        $this->pageTitle = 'Đăng Tin Error'.' - '.Yii::app()->setting->getItem('defaultPageTitle');
+        $this->render('raovat/dang_tin_error', array(
+            // 'model' => $model,
+        ));
+    }
+
     /*Khi payment thanh toán thành công thì update lại status và updated_date_status*/
     public function actionAccessPayment() 
     {
