@@ -64,7 +64,7 @@
 <!-- end of rao vặt hot -->
 <!-- google adsense -->
         <div class="col-lg-12 google-ad-list text-center ">
-          <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="50%" >
+          <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="100px" style="height: 100px;" >
         </div>
     </div>
 <!-- rao vặt hot -->
@@ -108,7 +108,7 @@
         <!-- end of rao vặt khac -->
         <!-- google adsense -->
           <div class="col-lg-12 google-ad-list text-center ">
-            <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="50%" >
+            <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="100px" style="height: 100px;" >
           </div>
     </div>
 </div>
