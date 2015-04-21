@@ -3,12 +3,13 @@ git status
 
 -get code moi tu host git ve
 git pull
-hay git pull origin master
+hay 
+git pull origin master
 
 - sau khi edit, them file moi, xoa file
 git add .
 
-git commit -m "message"
+git commit -m "thay doi dc message"
 
 git push 
 hay
