@@ -33,12 +33,18 @@ span.required{
                             $quang_cao2 = QuangCao::model()->findByPk(2);
                             if(!empty($quang_cao2))
                                 echo '<a target="_blank" href="'.$quang_cao2->link.'"><img src="'.$quang_cao2->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
+                                
+                                echo '<div style="display:block; height: 20px;"></div>';
+
+                            $quang_cao2 = QuangCao::model()->findByPk(2);
+                            if(!empty($quang_cao2))
+                                echo '<a target="_blank" href="'.$quang_cao2->link.'"><img src="'.$quang_cao2->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
                             ?>
                         </div>
                 </div>              
                 <div class="col span_2_of_3">
                          <div class="contact-form" style="margin-top: 20px">
-                    <h3><font color="#000">Nội dung tin</font></h3>
+                    
                             <!-- <form method="post" action="" onsubmit="return checkform();"> -->
                             <?php 
                                 $form=$this->beginWidget('CActiveForm', array(
@@ -174,6 +180,81 @@ span.required{
                         <!-- </form> -->
                         <?php $this->endWidget(); ?>
                     </div>
+                    <br /> <br />
+                    <style type="text/css">
+
+
+
+        .row_table {
+          display: table-row;
+          background: #f6f6f6;
+        }
+        .row_table:nth-of-type(odd) {
+          background: #e9e9e9;
+        }
+        .row_table.header {
+          font-weight: bold;
+          font-family: Museo Slab;
+          color: #ffffff;
+          background: #ea6153;
+          font-size: 25pt;
+        }
+        .row_table.green {
+          background: #27ae60;
+        }
+        .row_table.orange {
+          background: orange;
+        }
+        .row_table.blue {
+          background: #2980b9;
+        }
+
+        .cell_table {
+
+
+          display: table-cell;
+          font-weight: 500;
+          font-size: 16pt;
+        }
+</style>
+<div>
+<table class="table" cellspacing="0" cellpadding="0" >
+            <tr class="row_table header">
+            <td class="cell_table" colspan="0" align="center" style="border-radius: 15px 0px 0px 0px;">Loại tin</td>
+            <td class="cell_table" colspan="0" align="center" >Chi phí</td>
+            <td class="cell_table" colspan="0" align="center" >Loại tin</td>
+            <td class="cell_table" colspan="0" align="center" style="border-radius: 0px 15px 0px 0px;">Chi phí</td>
+            </tr>     
+              
+            <tr class="row_table">
+            <td class="cell_table" align="center">3 ngày</td>
+            <td class="cell_table" align="center">Free</td>
+            <td class="cell_table" align="center">2 tháng</td>
+            <td class="cell_table" align="center">29 $</td>
+            </tr>    
+               
+            <tr class="row_table">
+            <td class="cell_table" align="center">7 ngày</td>
+            <td class="cell_table" align="center">4.5 $</td>
+            <td class="cell_table" align="center">3 tháng</td>
+            <td class="cell_table" align="center">43.5 $</td>
+            </tr>
+            
+            <tr class="row_table">
+            <td class="cell_table" align="center">14 ngày</td>
+            <td class="cell_table" align="center">9.0 $</td>
+            <td class="cell_table" align="center">6 tháng</td>
+            <td class="cell_table" align="center">87 $</td>
+            </tr>
+            
+            <tr class="row_table">
+            <td class="cell_table" align="center" style="border-radius: 0px 0px 0px 15px;">1 tháng</td>
+            <td class="cell_table" align="center">14.5 $</td>
+            <td class="cell_table" align="center">1 năm</td>
+            <td class="cell_table" align="center" style="border-radius: 0px 0px 15px 0px;">174  $</td>        
+            </tr>
+    </table>
+    </div>
                 </div>      
               </div>
     <!-- //MAIN CONTENT -->
@@ -184,66 +265,6 @@ span.required{
 <br>              
 
 
-
-
-
-
-
-
-
-
-            <h1>Bạn muốn quảng cáo của mình hiển thị trong:</h1>
-
-                <ul class="ch-grid">
-                    <li>
-                        <div class="ch-item ch-img-1">              
-                            <div class="ch-info-wrap">
-                                <div class="ch-info">
-                                    <div class="ch-info-front ch-img-1"></div>
-                                    <div class="ch-info-back">
-                                        <h3><br>Free for 3 days</h3>
-                                        
-                                    </div>  
-                                </div>
-                            </div>
-                        </div><br>
-                        <div style="width:100%;text-align:center;">
-                        <input name="" type="button" value="Free Post" style="color:#3366FF;background-color:;font-family:Comic Sans MS;font-size:20px;font-weight:bold;font-style:italic;border-radius: 5px 5px 5px 5px;" onclick="window.open('')">
-                        <p href="" style="display:block;font-size:12px;color:#ff0000;margin:4px 0 0 0;">Secure Payments</p></div>
-                    </li>
-                    <li>
-                        <div class="ch-item ch-img-2">
-                            <div class="ch-info-wrap">
-                                <div class="ch-info">
-                                    <div class="ch-info-front ch-img-2"></div>
-                                    <div class="ch-info-back">
-                                        <h3>Just 4.5$ for a week<br>(Discount 50%)</h3>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div style="width:100%;text-align:center">
-                        <input name="" type="button" value="Subscrible" style="color:#f4b400;background-color:;font-family:Comic Sans MS;font-size:20px;font-weight:bold;font-style:italic;border-radius: 5px 5px 5px 5px;" onclick="window.open('https://payments.paysimple.com/Login/CheckOutFormLogin/UIHw8lXpGp1u-a7-L4J5CcZJ2cw-')">
-                        <p style="display:block;font-size:12px;color:#ff0000;margin:4px 0 0 0;">Secure Payments</p></div>
-                    </li>
-                    <li>
-                        <div class="ch-item ch-img-3">
-                            <div class="ch-info-wrap">
-                                <div class="ch-info">
-                                    <div class="ch-info-front ch-img-3"></div>
-                                    <div class="ch-info-back">
-                                        <h3>Just 14.5$ for a week<br>(Discount 50%)</h3>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div style="width:100%;text-align:center">
-                        <input name="" type="button" value="Subscrible" style="color:#db4437;background-color:;font-family:Comic Sans MS;font-size:20px;font-weight:bold;font-style:italic;border-radius: 5px 5px 5px 5px;" onclick="window.open('https://payments.paysimple.com/Login/CheckOutFormLogin/dDgS2oH9ssO51APXrIC30dYW6vE-')">
-                        <p style="display:block;font-size:12px;color:#ff0000;margin:4px 0 0 0;">Secure Payments</p></div>
-                    </li>
-                </ul>
 
                 
 
