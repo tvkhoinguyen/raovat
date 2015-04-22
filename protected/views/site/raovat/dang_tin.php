@@ -36,10 +36,20 @@ span.required{
                                 
                                 echo '<div style="display:block; height: 20px;"></div>';
 
-                            $quang_cao2 = QuangCao::model()->findByPk(2);
-                            if(!empty($quang_cao2))
-                                echo '<a target="_blank" href="'.$quang_cao2->link.'"><img src="'.$quang_cao2->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
+                            
                             ?>
+
+                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- Ad raobanusa.com 04 -->
+                                <ins class="adsbygoogle"
+                                     style="display:block"
+                                     data-ad-client="ca-pub-9511385175886331"
+                                     data-ad-slot="8496591600"
+                                     data-ad-format="auto"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+
                         </div>
                 </div>              
                 <div class="col span_2_of_3">

@@ -64,7 +64,16 @@
 <!-- end of rao vặt hot -->
 <!-- google adsense -->
         <div class="col-lg-12 google-ad-list text-center ">
-          <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="100px" style="height: 100px;" >
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Ad raobanusa.com 01 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9511385175886331"
+                 data-ad-slot="2729259604"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
         </div>
     </div>
 <!-- rao vặt hot -->
@@ -108,7 +117,16 @@
         <!-- end of rao vặt khac -->
         <!-- google adsense -->
           <div class="col-lg-12 google-ad-list text-center ">
-            <img class="img-responsive" src="<?php echo Yii::app()->theme->baseUrl;  ?>/images/body2.jpg" width="100%" height="100px" style="height: 100px;" >
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Ad raobanusa.com 02 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9511385175886331"
+                 data-ad-slot="8636192400"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
           </div>
     </div>
 </div>

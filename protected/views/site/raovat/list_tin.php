@@ -45,7 +45,16 @@
 
             <!-- google adsense -->
               <div class="col-lg-13 google-ad-list text-center ">
-                <img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/body2.jpg" width="1160px" height="100px">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Ad raobanusa.com 03 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9511385175886331"
+                     data-ad-slot="5543125209"
+                     data-ad-format="auto"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
               </div>
     </div>
 </div>
