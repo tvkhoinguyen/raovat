@@ -277,10 +277,6 @@ span.required{
 </div>
 <br>              
 
-
-
-                
-
                 <div class="company_address" style="margin-left: 100px">
                         <h2><font color="#000"> Qui định</font></h2>
                         <p align="justify"><font size="+1.5"><b>Tin rao vặt chỉ tồn tại trong 3 ngày kể từ ngày đăng tin đối với tin miễn phí.</b></font></p>
