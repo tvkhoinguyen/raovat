@@ -258,10 +258,13 @@ span.required{
             </tr>
             
             <tr class="row_table">
-            <td class="cell_table" align="center" style="border-radius: 0px 0px 0px 15px;">1 tháng</td>
+            <td class="cell_table" align="center" >1 tháng</td>
             <td class="cell_table" align="center">14.5 $</td>
             <td class="cell_table" align="center">1 năm</td>
-            <td class="cell_table" align="center" style="border-radius: 0px 0px 15px 0px;">174  $</td>        
+            <td class="cell_table" align="center" >174  $</td>        
+            </tr>
+            <tr class="row_table">
+            <td class="cell_table" align="center" style="border-radius: 0px 0px 15px 15px;">Giá trên đã được discount 50%</td>        
             </tr>
     </table>
     </div>
