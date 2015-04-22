@@ -91,9 +91,9 @@ class TinRaoVat extends _BaseModel
 	{
 		return array(
 			'id' => Yii::t('translation','ID'),
-			'title' => Yii::t('translation','Title'),
+			'title' => Yii::t('translation','Tiêu đề'),
 			'short_content' => Yii::t('translation','Short Content'),
-			'content' => Yii::t('translation','Content'),
+			'content' => Yii::t('translation','Nội dung'),
 			'status' => Yii::t('translation','Status'),
 			'image1' => Yii::t('translation','Image1'),
 			'image2' => Yii::t('translation','Image2'),
@@ -110,7 +110,7 @@ class TinRaoVat extends _BaseModel
 			'job_id' => Yii::t('translation','Job'),
 			'updated_date_status' => Yii::t('translation','Updated Date Status'),
 			'view' => Yii::t('translation','View'),
-			'loai_tin' => Yii::t('translation','Loai Tin'),
+			'loai_tin' => Yii::t('translation','Loại Tin'),
 			'post_user_id' => Yii::t('translation','Post User'),
 			'edit_user_id' => Yii::t('translation','Edit User'),
 			'post_user_name' => Yii::t('translation','Name'),
