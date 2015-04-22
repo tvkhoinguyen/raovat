@@ -80,11 +80,7 @@ span.required{
                                 <?php echo $form->textField($model,'post_user_name', array('class'=>'textbox', 'placeholder'=>'')); ?>
                                 <?php echo $form->error($model,'post_user_name'); ?> 
                             </div>
-                            <div>
-                                <?php echo $form->labelEx($model, 'title'); ?>
-                                <?php echo $form->textField($model,'title', array('class'=>'textbox', 'placeholder'=>'')); ?>
-                                <?php echo $form->error($model,'title'); ?> 
-                            </div>
+                            
                             <div>
                                 <!-- <span><label>Address</label></span> -->
                                 <?php echo $form->labelEx($model, 'address'); ?>
@@ -142,6 +138,11 @@ span.required{
                                 <?php echo $form->labelEx($model, 'loai_tin'); ?>
                                 <?php echo $form->dropDownList($model,'loai_tin', TinRaoVat::$loai_tin, array('class' => '')); ?>
                                 <?php echo $form->error($model,'loai_tin'); ?>
+                            </div>
+                            <div>
+                                <?php echo $form->labelEx($model, 'title'); ?>
+                                <?php echo $form->textField($model,'title', array('class'=>'textbox', 'placeholder'=>'')); ?>
+                                <?php echo $form->error($model,'title'); ?> 
                             </div>
                             <div>
                                 <!-- <span><label>Content</label></span> -->
