@@ -5,6 +5,47 @@ class SiteController extends FrontController
     public $attempts = MAX_TIME_TO_SHOW_CAPTCHA;
     public $counter;
 
+
+    public function actionIndex()
+    {
+        $this->pageTitle = Yii::app()->setting->getItem('defaultPageTitle');
+
+        $arr_duplicate = array();
+
+        $a = new TinRaoVat;
+        $b = new TinRaoVat;
+        $list_hot = $a->searchListHotIndex();
+
+        if(!empty($list_hot))
+        {
+            $dataArray = $list_hot->getData();
+            if(!empty($dataArray))
+            {
+                foreach ($dataArray as $one) 
+                {
+                    if(!empty($one))
+                        array_push($arr_duplicate, $one->id);
+                }
+            }
+        }
+
+        $list_khac = $b->searchListKhacIndex($arr_duplicate);
+        
+        // echo '<pre>';
+        // print_r($list_hot);
+        // echo '</pre>';
+
+        // echo '<pre>';
+        // print_r($list_khac);
+        // echo '</pre>';
+        // die;
+
+        $this->render('index', array(
+            'list_hot' => $list_hot ,
+            'list_khac' => $list_khac ,
+        ));
+    }
+
     public function actionDangTin()
     {
         $this->pageTitle = 'Đăng Tin'.' - '.Yii::app()->setting->getItem('defaultPageTitle');
@@ -153,28 +194,7 @@ class SiteController extends FrontController
 
     
 
-    public function actionIndex()
-    {
-        $this->pageTitle = Yii::app()->setting->getItem('defaultPageTitle');
-
-        $a = new TinRaoVat;
-        $b = new TinRaoVat;
-        $list_hot = $a->searchListHotIndex();
-        $list_khac = $b->searchListKhacIndex();
-        // echo '<pre>';
-        // print_r($list_hot);
-        // echo '</pre>';
-
-        // echo '<pre>';
-        // print_r($list_khac);
-        // echo '</pre>';
-        // die;
-
-        $this->render('index', array(
-            'list_hot' => $list_hot ,
-            'list_khac' => $list_khac ,
-        ));
-    }
+    
 
     public function actionListTin()
     {

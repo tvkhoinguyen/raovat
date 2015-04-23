@@ -518,7 +518,7 @@ class TinRaoVat extends _BaseModel
 		));
 	}
 
-	public function searchListKhacIndex()
+	public function searchListKhacIndex($arr_duplicate=null)
 	{
 		$criteria=new CDbCriteria;
 
@@ -548,7 +548,9 @@ class TinRaoVat extends _BaseModel
 		$criteria->compare('post_user_name',$this->post_user_name,true);
 		$criteria->compare('edit_user_name',$this->edit_user_name,true);
 
-		$criteria->addCondition('t.status = '.STATUS_ACTIVE);	
+		$criteria->addCondition('t.status = '.STATUS_ACTIVE);
+		if(!empty($arr_duplicate))
+			$criteria->addNotInCondition('id', $arr_duplicate);	
 		// $criteria->addCondition('t.is_hot = '.TYPE_YES);	
 		$criteria->order = ' updated_date DESC, order_display DESC ';
 		 
