@@ -504,9 +504,10 @@ class TinRaoVat extends _BaseModel
 		$criteria->compare('edit_user_name',$this->edit_user_name,true);
 
 		$criteria->addCondition('t.status = '.STATUS_ACTIVE);	
+		$criteria->addCondition('t.is_hot = '.TYPE_YES);	
 		// $criteria->addCondition('t.is_hot = '.TYPE_YES);	
-		$criteria->addCondition(' ( t.loai_tin='.TIN_7_NGAY. ' OR t.loai_tin='.TIN_1_THANG.' ) ');	
-		$criteria->order = ' updated_date DESC, order_display DESC ';
+		$criteria->addCondition(' ( t.loai_tin <> '.TIN_3_NGAY .') ');	
+		$criteria->order = ' order_display DESC, updated_date DESC ';
 		 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
