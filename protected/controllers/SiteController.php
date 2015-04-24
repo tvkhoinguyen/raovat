@@ -429,6 +429,82 @@ class SiteController extends FrontController
         header('Content-type: application/json');
         echo json_encode($arr_json);
         die;
+
+
+        # An HTTP GET request example
+
+        /*$url = 'http://localhost:8080/stocks';
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        echo $data;*/
+
+
+        # An HTTP POST request example
+        /*$data = array("token" => "thangbomaz.com");
+        $data_string = json_encode($data);
+
+        $ch = curl_init('http://localhost:8080/stocks/add');
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'Content-Length: ' . strlen($data_string))
+        );
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        $result = curl_exec($ch);
+        curl_close($ch);
+        echo $result;*/
+
+
+
+        /*$service_url = 'http://example.com/rest/user/';
+        $curl = curl_init($service_url);
+        $curl_post_data = array(
+            "token" => thangbomaz.com,
+            );
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
+        $curl_response = curl_exec($curl);
+        curl_close($curl);
+        $xml = new SimpleXMLElement($curl_response);*/
+
+
+
+        // set HTTP header
+        /*$headers = array(
+            'Content-Type: application/json'
+        );
+        // set POST params
+        $fields = array(
+            'key' => '<your_api_key>',
+            'format' => 'json',
+            'ip' => $_SERVER['REMOTE_ADDR'],
+        );
+        $url = LINK_WEB_SERVICE;
+        // Open connection
+        $ch = curl_init();
+        // Set the url, number of POST vars, POST data
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($fields));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields );
+        $result = curl_exec($ch);
+        curl_close($ch);
+        $result_arr = json_decode($result, true);
+        echo '<pre>';
+        print_r($result_arr);
+        echo '</pre>';*/
     }
 
 

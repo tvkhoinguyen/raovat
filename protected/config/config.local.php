@@ -9,6 +9,7 @@ include 'config_host/host.php';
 //Please do not change if not require
 // define('LINK_PAYSIMPLE', "https://payments.paysimple.com/Login/CheckOutFormLogin/UIHw8lXpGp1u-a7-L4J5CcZJ2cw-");
 define('LINK_PAYSIMPLE', "https://payments.paysimple.com/buyer/checkoutformpay/dDgS2oH9ssO51APXrIC30dYW6vE-");
+define('LINK_WEB_SERVICE', "http://raobanusa.com/site/serviceGetTin/token/thangbomaz.com");
 
 define('TIN_3_NGAY', 1);
 define('TIN_7_NGAY', 2);
