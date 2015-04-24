@@ -354,4 +354,82 @@ class SiteController extends FrontController
         ));
     }
 
+
+
+
+
+
+
+
+    //
+    //
+    //Web service for thangbomaz.com
+    //
+    //
+    public function actionServiceGetTin($token, $number_tin = 10)
+    {
+        if( empty($token) || $token != 'thangbomaz.com' ) die('service fail');
+
+        $criteria=new CDbCriteria;
+        /*$criteria->compare('id',$this->id);
+        $criteria->compare('title',$this->title,true);
+        $criteria->compare('status',$this->status);
+        $criteria->compare('image1',$this->image1,true);
+        $criteria->compare('image2',$this->image2,true);
+        $criteria->compare('order_display',$this->order_display);
+        // $criteria->compare('is_hot',$this->is_hot);
+        // $criteria->compare('is_new',$this->is_new);
+        $criteria->compare('phone',$this->phone,true);
+        $criteria->compare('mobile',$this->mobile,true);
+        $criteria->compare('state_id',$this->state_id);
+        $criteria->compare('city',$this->city,true);
+        $criteria->compare('created_date',$this->created_date,true);
+        $criteria->compare('updated_date',$this->updated_date,true);
+        $criteria->compare('slug',$this->slug,true);
+        $criteria->compare('job_id',$this->job_id);
+        $criteria->compare('updated_date_status',$this->updated_date_status,true);
+        $criteria->compare('view',$this->view);
+        // $criteria->compare('loai_tin',$this->loai_tin);
+        $criteria->compare('post_user_id',$this->post_user_id);
+        $criteria->compare('edit_user_id',$this->edit_user_id);
+        $criteria->compare('post_user_name',$this->post_user_name,true);
+        $criteria->compare('edit_user_name',$this->edit_user_name,true);*/
+
+        $criteria->addCondition('t.status = '.STATUS_ACTIVE);   
+        $criteria->addCondition('t.is_hot = '.TYPE_YES);    
+        $criteria->addCondition(' ( t.loai_tin <> '.TIN_3_NGAY .') ');  
+        $criteria->order = ' order_display DESC, updated_date DESC ';
+        $criteria->limit = $number_tin;
+
+        $models = TinRaoVat::model()->findAll($criteria);
+        $arr_json = array();
+        if(!empty($models))
+        {
+            foreach ($models as $one) 
+            {
+                if(empty($one)) continue;
+                $arr_json[$one->id] = array(
+                    'id' =>$one->id,
+                    'title'=>$one->title,
+                    'post_user_name'=>$one->post_user_name,
+                    'edit_user_name'=>$one->edit_user_name,
+                    // 'slug'=>$one->slug,
+                    'created_date'=>$one->created_date,
+                    'updated_date_status'=>$one->updated_date_status,
+                    'phone'=>$one->phone,
+                    'city'=>$one->city,
+                    'job'=>!empty($one->rJob) ? $one->rJob->name : "",
+                    'state'=> !empty($one->rState) ? $one->rState->name : "",
+                    'link'=> Yii::app()->createAbsoluteUrl('site/tinDetail', array('slug'=>$one->slug)),
+                );
+
+            }
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($arr_json);
+        die;
+    }
+
+
 }
