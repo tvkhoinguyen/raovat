@@ -22,7 +22,7 @@ span.required{
             <div class="section group">             
                 <div class="col span_1_of_3">
 
-                        <div class="company_address" style="margin-top:30px">
+                        <div class="company_address " style="margin-top:30px">
                             <?php
                             $quang_cao1 = QuangCao::model()->findByPk(1);
                             if(!empty($quang_cao1))
