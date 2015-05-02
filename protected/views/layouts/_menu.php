@@ -39,15 +39,16 @@
               <font color="#980000">
                 <ul class="nav navbar-nav">
                   <li class="item-28">          <a href="index.php">Home</a></li>
-                  <li class="item-202">       <a href="chuyen_muc.php" >Cần thợ nail</a></li>
-                  <li class="item-203">       <a href="chuyen_muc.php" >Sang tiệm</a></li>
-                  <li class="item-204">       <a href="chuyen_muc.php" >Giữ trẻ</a></li>
-                  <li class="item-205">       <a href="chuyen_muc.php" >Share Phòng</a></li>
-                  <li class="item-206">       <a href="chuyen_muc.php" >Cần người</a></li>
-                  <li class="item-207">       <a href="chuyen_muc.php" >Tìm việc miễn phí</a></li>
-                  <li class="item-207">        <a href="chuyen_muc.php" >Cần bán</a></li>
-                  <li class="item-207">        <a href="dang_tin.php" >Đăng tin</a></li>
-                  <li class="item-208">       <a href="lien_he.php" >Liên hệ</a></li>
+                  <li class="item-202">       <a href="http://raobanusa.com/chuyen-muc/can-tho" >Cần thợ nail</a></li>
+                  <li class="item-203">       <a href="http://raobanusa.com/chuyen-muc/sang-tiem" >Sang tiệm</a></li>
+                  <li class="item-204">       <a href="http://raobanusa.com/chuyen-muc/giu-tre" >Giữ trẻ</a></li>
+                  <li class="item-205">       <a href="http://raobanusa.com/chuyen-muc/share-pho-ng-ba-n-nha" >Share Phòng</a></li>
+                  <li class="item-206">       <a href="http://raobanusa.com/chuyen-muc/ca-n-nguo-i" >Cần người</a></li>
+                  <li class="item-207">       <a href="http://raobanusa.com/chuyen-muc/ti-m-vie-c" >Tìm việc miễn phí</a></li>
+                  <li class="item-207">        <a href="http://raobanusa.com/chuyen-muc/ca-n-ba-n" >Cần bán</a></li>
+                  <li class="item-207">        <a href="http://raobanusa.com/chuyen-muc/qua-ng-ca-o" >Quảng cáo</a></li>
+                  <li class="item-207">        <a href="http://raobanusa.com/dang-tin" >Đăng tin</a></li>
+                  <li class="item-208">       <a href="http://raobanusa.com/contact-us" >Liên hệ</a></li>
                 </ul>
               </font>
           </div>

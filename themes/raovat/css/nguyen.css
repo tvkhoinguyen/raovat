@@ -40,3 +40,19 @@
 .detail_wrapper_chitiet{
 	border-bottom: 1px solid #e0e0e0;
 }
+
+body{
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size:14px;
+  line-height:1.42857143;
+  color:#000;
+  background:#e9eaed;
+}
+.t3-header{padding-top:10px;padding-bottom:10px;background:#133783;}
+.search-navigation{background:#3a5795;height:50px;border-top:2px solid #FFF;border-bottom:2px solid #FFF}
+.btn-mobile{
+        color:#333333;
+        background-color:#ffffff;
+        border-color:#cccccc;
+        width: 100px;
+      }

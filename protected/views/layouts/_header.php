@@ -21,7 +21,7 @@
                         <li class="fr"><a href="<?php echo Yii::app()->setting->getItem('rao_vat_link_forum'); ?>">Forum</a></li>
                     </ul>
                     <div class="dropdown hidden-lg web-tre-ipad">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            <button class="btn btn-mobile dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                             Thangbomaz
                             <span class="caret"></span>
                             </button>
