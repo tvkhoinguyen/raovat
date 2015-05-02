@@ -7,9 +7,9 @@
 
 <!-- Menu out on Mobile devices -->
     <div class="dropdown hidden-lg web-tre-ipad">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-        
-        <span class="caret">Thangbomaz</span>
+        <button class="btn btn-mobile dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        Liên kết
+        <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
             <li role="presentation" class="tt"><a role="menuitem" tabindex="-1" href="<?php echo Yii::app()->setting->getItem('rao_vat_link_tin_tuc'); ?>">Tin tức</a></li>

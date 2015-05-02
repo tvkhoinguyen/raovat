@@ -54,5 +54,6 @@ body{
         color:#333333;
         background-color:#ffffff;
         border-color:#cccccc;
-        width: 100px;
+        width: 100px !important;
       }
+.web-tre-ipad{margin-top:15px;margin-left:50px}

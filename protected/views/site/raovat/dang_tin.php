@@ -21,18 +21,18 @@ span.required{
         <div class="contact">
             <div class="section group">             
                 <div class="col span_1_of_3">
-
-                        <div class="company_address" style="margin-top:30px">
+                        <!-- hidden-xs hidden-sm -->
+                        <div class="" style="margin-top:30px">
                             <?php
                             $quang_cao1 = QuangCao::model()->findByPk(1);
                             if(!empty($quang_cao1))
-                                echo '<a target="_blank" href="'.$quang_cao1->link.'"><img src="'.$quang_cao1->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
+                                echo '<a target="_blank" href="'.$quang_cao1->link.'"><img class="img-responsive" src="'.$quang_cao1->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
                             
                             echo '<div style="display:block; height: 20px;"></div>';
 
                             $quang_cao2 = QuangCao::model()->findByPk(2);
                             if(!empty($quang_cao2))
-                                echo '<a target="_blank" href="'.$quang_cao2->link.'"><img src="'.$quang_cao2->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
+                                echo '<a target="_blank" href="'.$quang_cao2->link.'"><img class="img-responsive" src="'.$quang_cao2->getImageUrl('image', QUANG_CAO_DANG_TIN ).'" /></a>';
                                 
                                 echo '<div style="display:block; height: 20px;"></div>';
 
