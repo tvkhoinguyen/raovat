@@ -632,11 +632,11 @@ class TinRaoVat extends _BaseModel
 		{
 			$this->updated_date_status = date('Y-m-d H:i:s');
 		}
-		if(!Yii::app()->user->id)
-		{
-			$this->post_user_id = '';
-			$this->edit_user_id = '';
-		}
+		// if(!Yii::app()->user->id)
+		// {
+		// 	$this->post_user_id = '';
+		// 	$this->edit_user_id = '';
+		// }
 
 	    return parent::beforeSave();
 	}
@@ -663,11 +663,11 @@ class TinRaoVat extends _BaseModel
 		{
 			$this->updated_date_status = date('Y-m-d H:i:s');
 		}
-		if(!Yii::app()->user->id)
-		{
-			$this->post_user_id = '';
-			$this->edit_user_id = '';
-		}
+		// if(!Yii::app()->user->id)
+		// {
+		// 	$this->post_user_id = '';
+		// 	$this->edit_user_id = '';
+		// }
         return parent::beforeValidate();
     }
 
