@@ -813,9 +813,12 @@ class TinRaoVat extends _BaseModel
 
     public static function cronJobCheckHiddenDelete()
     {
+    	Yii::app()->setting->setDbItem('last_working2', date('Y-m-d H:i:s'));
+
     	$models = TinRaoVat::model()->findAll();
-    	foreach ($$models as $one) 
+    	foreach ($models as $one) 
     	{
+    		if(empty($one)) continue;
     		$one->checkHiddenTin();
     		$one->checkXoaTin();
     	}
