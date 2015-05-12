@@ -727,7 +727,8 @@ class TinRaoVat extends _BaseModel
     	}
 
 
-    	if( (($now_time-$updated_date_status_time) > $elapsed) && !empty($elapsed) && !empty($updated_date_status_time) )
+    	// if( (($now_time-$updated_date_status_time) > $elapsed) && !empty($elapsed) && !empty($updated_date_status_time) )
+    	if(    ( $updated_date_status_time + $elapsed ) < $now_time   && !empty($elapsed) && !empty($updated_date_status_time) )
     	{
     		if($this->status==STATUS_ACTIVE)
     		{
