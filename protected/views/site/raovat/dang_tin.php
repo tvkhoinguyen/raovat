@@ -134,11 +134,13 @@ span.required{
                                 <?php echo $form->error($model,'mobile'); ?>
                             </div>
 
+<?php /*
                             <div>
                                 <?php echo $form->labelEx($model, 'loai_tin'); ?>
                                 <?php echo $form->dropDownList($model,'loai_tin', TinRaoVat::$loai_tin, array('class' => '')); ?>
                                 <?php echo $form->error($model,'loai_tin'); ?>
                             </div>
+*/ ?>
                             <div>
                                 <?php echo $form->labelEx($model, 'title'); ?>
                                 <?php echo $form->textField($model,'title', array('class'=>'textbox', 'placeholder'=>'')); ?>

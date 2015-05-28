@@ -61,7 +61,11 @@ class SiteController extends FrontController
             // array('address,email,id, title, short_content, content, status, image1, image2, order_display, is_hot, is_new, phone, mobile, state_id, city, created_date, updated_date, slug, job_id, updated_date_status, view, loai_tin, post_user_id, edit_user_id, post_user_name, edit_user_name', 'safe'),
             $model->short_content = StringHelper::limitStringLength( trim( strip_tags($model->content) ),100 );
             $model->content = trim(strip_tags($model->content));
-            $model->loai_tin = $_POST['TinRaoVat']['loai_tin'];
+
+
+            // $model->loai_tin = $_POST['TinRaoVat']['loai_tin'];
+            $model->loai_tin = TIN_3_NGAY;
+
             /*khi post Tin lên thì status Inactive (chưa payment)
             Sau khi payment thành công thì update status Active
             Status này cũng có thể được update bởi Mod và Admin*/
@@ -86,8 +90,7 @@ class SiteController extends FrontController
                     if($model->loai_tin==TIN_3_NGAY)
                     {
                         $model = new TinRaoVat('dang_tin');
-                    }
-                    else{
+                    }else{
                         $this->redirect(LINK_PAYSIMPLE);    
                     }
                     

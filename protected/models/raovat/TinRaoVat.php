@@ -684,7 +684,8 @@ class TinRaoVat extends _BaseModel
 
     	if($this->loai_tin == TIN_3_NGAY)
     	{
-    		$elapsed = 3*24*60*60;
+    		// $elapsed = 3*24*60*60;
+    		$elapsed = 30*24*60*60; //fix thanh 30 ngay mới hidden
     	}
     	else if($this->loai_tin == TIN_7_NGAY)
     	{
